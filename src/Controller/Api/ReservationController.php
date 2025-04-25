@@ -10,17 +10,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
-#[Route('/api/reservation')]
+#[Route('/api/reservations')]
 final class ReservationController extends AbstractController
 {
     public function __construct(
-        private ReservationServices $services,
-        private SerializerInterface $serializer
+        private ReservationServices $services
     )
     {
     }
 
-    #[Route('/create', name: 'app_api_reservation_create')]
+    #[Route('', name: 'app_api_reservation_create')]
     public function create(Request $request): JsonResponse
     {
         $data = $request->getContent();

@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ApiResource(
     operations: [
         new Post(
-            uriTemplate: '/api/reservation/create',
+            uriTemplate: '/api/reservations',
             routeName: 'app_api_reservation_create',
             description: 'Create a new reservation',
             denormalizationContext: [

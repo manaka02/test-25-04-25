@@ -19,7 +19,7 @@ class ReservationServices
     {
     }
 
-    private array $requiredParams = ["car", "userEmail", "startAt", "endAt"];
+    private array $requiredParams = ["carId", "userEmail", "startAt", "endAt"];
 
     // create new reservation
     public function createReservation(?string $dataJson): Reservation
@@ -35,10 +35,10 @@ class ReservationServices
                 }
             }
 
-            $car = $this->managerRegistry->getRepository(Car::class)->find($data['car']);
+            $car = $this->managerRegistry->getRepository(Car::class)->find($data['carId']);
 
             if (!$car) {
-                throw new \Exception("La voiture avec l'identifiant '{$data['car']}' n'existe pas.");
+                throw new \Exception("La voiture avec l'identifiant '{$data['carId']}' n'existe pas.");
             }
 
             $reservation = new Reservation();

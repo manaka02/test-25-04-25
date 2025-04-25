@@ -38,7 +38,7 @@ Access the API at: http://127.0.0.1:8000/api/
 
 ```bash
 {
-"car": 1,
+"carId": 1,
 "userEmail": "toavina@gmail.com",
 "startAt": "2025-04-24T12:58:36.781Z",
 "endAt": "2025-04-25T12:58:36.781Z"
