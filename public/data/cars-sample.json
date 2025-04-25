@@ -1,0 +1,52 @@
+[
+  {
+    "immatriculation": "AB-123-CD",
+    "marque": "Renault",
+    "modele": "Clio"
+  },
+  {
+    "immatriculation": "EF-456-GH",
+    "marque": "Peugeot",
+    "modele": "208"
+  },
+  {
+    "immatriculation": "IJ-789-KL",
+    "marque": "Citroën",
+    "modele": "C3"
+  },
+  {
+    "immatriculation": "MN-012-OP",
+    "marque": "Volkswagen",
+    "modele": "Golf"
+  },
+  {
+    "immatriculation": "QR-345-ST",
+    "marque": "Ford",
+    "modele": "Focus"
+  },
+  {
+    "immatriculation": "UV-678-WX",
+    "marque": "Toyota",
+    "modele": "Yaris"
+  },
+  {
+    "immatriculation": "YZ-901-AB",
+    "marque": "Nissan",
+    "modele": "Micra"
+  },
+  {
+    "immatriculation": "CD-234-EF",
+    "marque": "Honda",
+    "modele": "Civic"
+  },
+  {
+    "immatriculation": "GH-567-IJ",
+    "marque": "Mazda",
+    "modele": "Mazda3"
+  },
+  {
+    "immatriculation": "KL-890-MN",
+    "marque": "Hyundai",
+    "modele": "i30"
+  }
+]
