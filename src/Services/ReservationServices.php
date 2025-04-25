@@ -22,6 +22,10 @@ class ReservationServices
     private array $requiredParams = ["carId", "userEmail", "startAt", "endAt"];
 
     // create new reservation
+
+    /**
+     * @throws \Exception
+     */
     public function createReservation(?string $dataJson): Reservation
     {
 
@@ -61,7 +65,7 @@ class ReservationServices
         }
     }
 
-    private function validate(Reservation $reservation)
+    private function validate(Reservation $reservation): void
     {
         $errors = $this->validator->validate($reservation);
 
