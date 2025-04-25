@@ -10,6 +10,7 @@ use App\Repository\ReservationRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\OpenApi\Model;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
 #[ApiResource(
@@ -17,6 +18,20 @@ use Symfony\Component\Validator\Constraints as Assert;
         new Post(
             uriTemplate: '/api/reservations',
             routeName: 'app_api_reservation_create',
+            openapi: new Model\Operation(
+                requestBody: new Model\RequestBody(
+                    content: new \ArrayObject([
+                        'application/json' => [
+                            'example' => [
+                                'carId' => 2,
+                                'userEmail' => 'toavina@gmail.com',
+                                'startAt' => '2025-04-21T12:58:36.781Z',
+                                'endAt' => '2025-04-23T12:58:36.781Z'
+                            ]
+                        ]
+                    ])
+                )
+            ),
             description: 'Create a new reservation',
             denormalizationContext: [
                 'groups' => ['reservation:write']
@@ -35,7 +50,6 @@ class Reservation
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     #[ORM\JoinColumn(nullable: false)]
     #[Groups(['reservation:read', 'reservation:write'])]
-    #[ApiProperty(openapiContext: ['example' => 'identifiant de la voiture'])]
     private ?Car $car = null;
 
     // assert Email
