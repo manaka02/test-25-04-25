@@ -48,8 +48,12 @@ class ReservationServices
             $reservation = new Reservation();
             $reservation->setCar($car);
             $reservation->setUserEmail($data['userEmail']);
-            $reservation->setStartAt(new \DateTimeImmutable($data['startAt']));
-            $reservation->setEndAt(new \DateTimeImmutable($data['endAt']));
+            try {
+                $reservation->setStartAt(new \DateTimeImmutable($data['startAt']));
+                $reservation->setEndAt(new \DateTimeImmutable($data['endAt']));
+            }catch (\Exception $exception){
+                throw new \Exception("Le format de la date est invalide. Veuillez utiliser le format 'YYYY-MM-DDTHH:MM:SS'.");
+            }
 
             $this->validate($reservation);
             $this->checkOverlap($reservation);
